@@ -1,1 +1,1 @@
-### for simple testing of javascript modules in browsers
+### for simple testing of node modules in browsers
