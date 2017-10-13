@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "npm-run-all --parallel client server",
     "client": "watchify -t coffeeify src/index.coffee -o dist/bundle.js --debug --verbose --extension='.coffee'",
-    "server": "live-server --no-browser --ignore=node_modules",
+    "server": "live-server --cors --no-browser --ignore=node_modules",
+    "deploy": "surge -p server/public -d https://YOUR-DOMAIN.surge.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "akralj",
@@ -15,6 +16,10 @@
     "coffeeify": "github:akralj/coffeeify",
     "live-server": "^1.2.0",
     "npm-run-all": "^4.1.1",
+    "surge": "^0.19.0",
     "watchify": "^3.9.0"
+  },
+  "dependencies": {
+    "axios": "^0.16.2"
   }
 }
