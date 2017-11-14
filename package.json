@@ -13,7 +13,8 @@
   "author": "akralj",
   "license": "MIT",
   "devDependencies": {
-    "coffeeify": "github:akralj/coffeeify",
+    "coffeeify": "^3.0.1",
+    "coffeescript": "^2.0.2",
     "live-server": "^1.2.0",
     "npm-run-all": "^4.1.1",
     "surge": "^0.19.0",
