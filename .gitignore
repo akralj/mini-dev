@@ -1,9 +1,0 @@
-dist/
-db/
-debug/
-node_modules/
-server/public/
-
-.DS_Store
-.tern-port
-npm-debug.log
