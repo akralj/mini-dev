@@ -1,0 +1,49 @@
+<html lang="de">
+  <head>
+    <title>Pfarrenfinder</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="static/favicon.png" sizes="32x32">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="vue-instance">
+      <div v-if="messages.networkError">
+          <div class="notification is-danger">{{ messages.networkError }}</div>
+      </div>
+      <div v-else>
+        <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+            <div class="navbar-item">
+            <h3>Finder:</h3>
+          </div>
+          <div class="navbar-item">
+            <input v-model="searchString" class="input is-rounded" placeholder="Name or Number">
+          </div>
+        </nav>
+        <section class="section" v-if="filteredData.length > 0">
+          <div class="container">
+            <h2 class="subtitle"></h2>
+            <table class="table is-striped is-bordered">
+                <tr>
+                  <th v-for="name in tableHeaders">{{ name }}</th>
+                </tr>
+                <tr v-for="(item, index) in filteredData">
+                  <td align="left">{{ index + 1 }} </td>
+                  <td align="left">{{ item.name }} </td>
+                  <td align="left">{{ item.email }} </td>
+                  <td align="left">{{ item.phone }} </td>
+                </tr>
+              </table>
+          </div>
+        </section>
+      </div>
+      
+    </div>
+  </body>
+
+  <script src="index.coffee"></script>
+
+</html>
