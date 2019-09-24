@@ -24,13 +24,16 @@ vm = new Vue
   
   created: ->
     self = this
+    # await test
+    console.log await 5
+
 
     fetch("https://jsonplaceholder.typicode.com/users")
     .then(handleErrors)
     .then((res) -> res.json())
     .then((json) ->
       if json
-        console.log json
+        #console.log json
         self.items = _.orderBy(json, ["name", "phone"], ["asc", "asc"])
     ).catch (err) -> self.messages.networkError = "Can't download data."
 
