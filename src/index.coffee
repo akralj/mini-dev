@@ -25,8 +25,7 @@ vm = new Vue
   created: ->
     self = this
     # await test
-    console.log await 5
-
+    console.log await 13
 
     fetch("https://jsonplaceholder.typicode.com/users")
     .then(handleErrors)
