@@ -2,6 +2,8 @@
 #
 #
 
+$ = require("jquery")
+
 getDateFromString = (string) ->
   if string
     [year, month, day]  = string.slice(0, 10).split('-')
@@ -27,13 +29,15 @@ vm = new Vue
     # await test
     console.log await 13
 
-    fetch("https://jsonplaceholder.typicode.com/users")
+    #fetch("https://jsonplaceholder.typicode.com/users")
+    fetch("http://seminarhaus-engl.de/Seminare")
     .then(handleErrors)
-    .then((res) -> res.json())
-    .then((json) ->
-      if json
+    .then((res) -> res.text())
+    .then((html) ->
+      #if json
         #console.log json
-        self.items = _.orderBy(json, ["name", "phone"], ["asc", "asc"])
+        #self.items = _.orderBy(json, ["name", "phone"], ["asc", "asc"])
+      console.log html
     ).catch (err) -> self.messages.networkError = "Can't download data."
 
   
