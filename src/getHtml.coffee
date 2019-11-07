@@ -1,3 +1,8 @@
+# todos: remove quoates and replace colons : to make netlfiy-cms treat them properly
+# https://stackoverflow.com/questions/11301650/how-to-escape-indicator-characters-i-e-or-in-yaml
+#
+
+
 fs              = require("fs")
 axios           = require ("axios")
 cheerio         = require("cheerio")
